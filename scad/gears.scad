@@ -13,45 +13,45 @@ include <MCAD/involute_gears.scad>
 
 // WHAT TO GENERATE?
 generate = 0;    // GENERATE BOTH GEARS FOR VIEWING
-// generate = 1;    // GENERATE STEPPER GEAR FOR PRINTING
- generate = 2;    // GENERATE DRIVE GEAR FOR PRINTING
+ generate = 1;    // GENERATE STEPPER GEAR FOR PRINTING
+// generate = 2;    // GENERATE DRIVE GEAR FOR PRINTING
 
 // OPTIONS COMMON TO BOTH GEARS:
 distance_between_axels = 42;
 gear_h = 10;
 
 // for big 
-gear_shaft_h = 5;
+//gear_shaft_h = 5;
 
 // for small
-//gear_shaft_h = 10;
+gear_shaft_h = 10;
 
 
 // GEAR1 (SMALLER GEAR, STEPPER GEAR) OPTIONS:
 // It's helpful to choose prime numbers for the gear teeth.
 gear1_teeth = 13;
-gear1_shaft_d = 5.25;  			// diameter of motor shaft
+gear1_shaft_d = 5.6;  			// diameter of motor shaft
 gear1_shaft_r  = gear1_shaft_d/2;	
 // gear1 shaft assumed to fill entire gear.
 // gear1 attaches by means of a captive nut and bolt (or actual setscrew)
 gear1_setscrew_offset = 5;			// Distance from motor on motor shaft.
 gear1_setscrew_d         = 3.5;		
 gear1_setscrew_r          = gear1_setscrew_d/2;
-gear1_captive_nut_d = 6.2;
+gear1_captive_nut_d = 6;
 gear1_captive_nut_r  = gear1_captive_nut_d/2;
-gear1_captive_nut_h = 2.9;
+gear1_captive_nut_h = 2.5;
 
 
 // GEAR2 (LARGER GEAR, DRIVE SHAFT GEAR) OPTIONS:
 gear2_teeth = 37;
-gear2_shaft_d = 8.5;
+gear2_shaft_d = 8.6;
 gear2_shaft_r  = gear2_shaft_d/2;
 // gear2 has settable outer shaft diameter.
 gear2_shaft_outer_d = 16;
 gear2_shaft_outer_r  = gear2_shaft_outer_d/2;
 
 // gear2 has a hex bolt set in it, is either a hobbed bolt or has the nifty hobbed gear from MBI on it.
-gear2_bolt_hex_d       = 15;
+gear2_bolt_hex_d       = 15.2;
 gear2_bolt_hex_r        = gear2_bolt_hex_d/2;
 // gear2_bolt_sink: How far down the gear shaft the bolt head sits; measured as distance from drive end of gear.
 gear2_bolt_sink          = 5;		
