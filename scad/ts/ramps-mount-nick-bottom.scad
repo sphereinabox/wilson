@@ -49,7 +49,7 @@ bottom_thickness = 4;
 bottom_float = 1.5; // distance above bottom of extrusion
 
 bottom_extra_a = 28;
-bottom_extra_b = 24;
+bottom_extra_b = 10;
 bottom_extra_width = 110;
 bottom_extra_thickness = 3;
 
