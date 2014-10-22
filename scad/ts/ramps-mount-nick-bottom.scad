@@ -16,7 +16,7 @@ arduino_hole_positions = [
 arduino_hole_radius = 3.3/2;
 
 module arduino_indents(padding=1) {
-	height=20;
+	height=40;
 	padding2=padding*2;
 	cable_length = 50;
 	cable_height = 15;
@@ -66,7 +66,7 @@ module ramps_mount() {
 			cube([arduino_length+2*side_thickness,2*side_thickness+arduino_depth,20-bottom_float]);
 
 			// bigger box around arduino
-			translate([-0.5*((20+extrusion_center_spacing) -(arduino_length+2*side_thickness)),0,0]) cube([20+extrusion_center_spacing,2*side_thickness+arduino_depth,20-bottom_float]);
+			translate([-0.5*((20+extrusion_center_spacing) -(arduino_length+2*side_thickness)),0,0]) cube([20+extrusion_center_spacing,2*side_thickness+arduino_depth,40-bottom_float]);
 			
 			// bottom extra flat space
 			translate([-0.5*((bottom_extra_width) -(arduino_length+2*side_thickness)),-bottom_extra_a,0]) cube([bottom_extra_width,2*side_thickness+arduino_depth+bottom_extra_a+bottom_extra_b,bottom_extra_thickness]);
@@ -77,12 +77,12 @@ module ramps_mount() {
 		for (side = [-1,1]) {
 			translate([0.5*(extrusion_center_spacing+20)
 			+side*0.5*(extrusion_center_spacing+20)
-			,0,0])
+			,0,10])
 			{
-				#translate([-side*10,0,0.5*(20-bottom_float)-4]) cube([20-3,2*side_thickness+arduino_depth-3,20-bottom_float],center=true);
+				#translate([-side*10,0,0.5*(20-bottom_float)-4]) cube([20-3,2*side_thickness+arduino_depth-3,40-bottom_float],center=true);
 				
 				for (slot=[-0.33,0.33]) {
-					#translate([-side*10,slot*(2*side_thickness+arduino_depth),0.5*(20-bottom_float)+1]) cube([20-3,extrusion_mounting_hole_width,20-bottom_float],center=true);
+					#translate([-side*10,slot*(2*side_thickness+arduino_depth),0.5*(20-bottom_float)+1]) cube([20-3,extrusion_mounting_hole_width,40-bottom_float],center=true);
 				}
 			}
 		}
